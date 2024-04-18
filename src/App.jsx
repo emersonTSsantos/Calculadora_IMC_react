@@ -10,7 +10,7 @@ function App() {
 
   const calcularIMC = () => {
     if (altura && peso) {
-      const alturaMetros = altura / 100;
+      const alturaMetros = parseFloat(altura.replace(',', '.')); // Converter a altura para float
       const imcCalculado = peso / (alturaMetros * alturaMetros);
       setIMC(imcCalculado.toFixed(2));
 
@@ -39,17 +39,28 @@ function App() {
     }
   };
 
+  const handleAlturaChange = (e) => {
+    let value = e.target.value;
+    // Remover caracteres não numéricos exceto ponto e vírgula
+    value = value.replace(/[^\d.,]/g, '');
+    // Permitir apenas uma vírgula ou ponto
+    value = value.replace(/([.,])[.,]+/g, '$1');
+    // Substituir vírgula por ponto
+    value = value.replace(',', '.');
+    setAltura(value);
+  };
+
   return (
     <div className="container">
       <h1>Calculadora de IMC</h1>
       <div className="form">
         <label htmlFor="altura">Qual a sua altura? </label>
         <input
-          type="number"
+          type="text"
           id="altura"
           value={altura}
-          onChange={(e) => setAltura(e.target.value)}
-          placeholder="Digite sua altura em centímetros"
+          onChange={handleAlturaChange}
+          placeholder="Digite sua altura em metros (ex: 1.65)"
           onKeyPress={handleEnterKeyPress}
         />
         <label htmlFor="peso">Quanto vc pesa? </label>
