@@ -97,6 +97,7 @@ tr.highlight {
 
   .tabela {
     width: 90%;
+    margin-left: 5%;
   }
 
   h1 {
@@ -107,7 +108,7 @@ tr.highlight {
 
 @media screen and (min-width: 600px) and (max-width: 1023px) {
   .container {
-    margin-left: 170px;
+    margin-left: 0px;
     margin-top: 0;
   }
 
