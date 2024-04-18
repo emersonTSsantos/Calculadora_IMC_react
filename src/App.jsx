@@ -10,11 +10,10 @@ function App() {
 
   const calcularIMC = () => {
     if (altura && peso) {
-      const alturaMetros = parseFloat(altura.replace(',', '.')); // Converter a altura para float
+      const alturaMetros = parseFloat(altura.replace(',', '.')); 
       const imcCalculado = peso / (alturaMetros * alturaMetros);
       setIMC(imcCalculado.toFixed(2));
 
-      // Determinando a classificação
       let classificacaoAtual = '';
       if (imcCalculado < 18.5) {
         classificacaoAtual = 'Abaixo do peso';
