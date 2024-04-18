@@ -41,11 +41,8 @@ function App() {
 
   const handleAlturaChange = (e) => {
     let value = e.target.value;
-    // Remover caracteres não numéricos exceto ponto e vírgula
     value = value.replace(/[^\d.,]/g, '');
-    // Permitir apenas uma vírgula ou ponto
     value = value.replace(/([.,])[.,]+/g, '$1');
-    // Substituir vírgula por ponto
     value = value.replace(',', '.');
     setAltura(value);
   };
@@ -60,7 +57,7 @@ function App() {
           id="altura"
           value={altura}
           onChange={handleAlturaChange}
-          placeholder="Digite sua altura em metros (ex: 1.65)"
+          placeholder="Digite sua altura (ex: 1.65)"
           onKeyPress={handleEnterKeyPress}
         />
         <label htmlFor="peso">Quanto vc pesa? </label>
