@@ -8,6 +8,7 @@ body {
   align-items: center;
   margin-top: 50px;
   margin-left: 750px;
+
 }
 
 h1,h2,h3 {
@@ -32,6 +33,7 @@ input {
   padding: 8px;
   width: 200px;
 }
+
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
@@ -87,4 +89,53 @@ tr:hover {
 
 tr.highlight {
   background-color: #8bc34a;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-left: 0px;
+    margin-top: 0;
+  }
+
+  .tabela {
+    width: 90%;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .container {
+    margin-left: 170px;
+    margin-top: 0;
+  }
+
+  label {
+    font-size: 25px;
+  }
+
+  input {
+    font-size: 25px;
+    width: 100%;
+  }
+
+  .button {
+    font-size: 25px;
+    width: 50%;
+    margin-bottom: 8px;
+    margin-top: 20px;
+  }
+
+  .tabela {
+    width: 100%;
+    font-size: 25px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
 }
